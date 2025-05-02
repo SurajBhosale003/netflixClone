@@ -1,0 +1,37 @@
+|-- .eslintrc.cjs
+|-- .gitignore
+|-- README.md
+|-- index.html
+|-- package-lock.json
+|-- package.json
+|-- public
+    |-- vite.svg
+|-- src
+    |-- App.css
+    |-- App.tsx
+    |-- assets
+    |-- components
+        |-- sections
+            |-- List.tsx
+            |-- Slider.tsx
+        |-- utility
+            |-- CustomVideoPlayer.tsx
+            |-- Footer.tsx
+            |-- Header.tsx
+    |-- content
+        |-- VideoOBJ.ts
+    |-- index.css
+    |-- main.tsx
+    |-- pages
+        |-- Home.tsx
+        |-- PageData.tsx
+        |-- PlayerV.tsx
+    |-- svg
+        |-- LogoSVG.tsx
+        |-- StarSVG.tsx
+    |-- vite-env.d.ts
+|-- tailwind.config.ts
+|-- tsconfig.app.json
+|-- tsconfig.json
+|-- tsconfig.node.json
+|-- vite.config.ts
