@@ -107,9 +107,9 @@ const CustomVideoPlayer: React.FC<Props> = ({ source, adSchedule }) => {
     if (wasFullscreen.current && videoElement) {
       const requestFullscreen =
         videoElement.requestFullscreen ||
-        videoElement.webkitRequestFullscreen ||
-        videoElement.mozRequestFullScreen ||
-        videoElement.msRequestFullscreen;
+        (videoElement as any).webkitRequestFullscreen ||
+        (videoElement as any).mozRequestFullScreen ||
+        (videoElement as any).msRequestFullscreen;
   
       if (requestFullscreen) {
         requestFullscreen.call(videoElement);

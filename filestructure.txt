@@ -18,6 +18,7 @@
             |-- CustomVideoPlayer.tsx
             |-- Footer.tsx
             |-- Header.tsx
+            |-- NewsMareqee.tsx
     |-- content
         |-- VideoOBJ.ts
     |-- index.css

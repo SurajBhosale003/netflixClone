@@ -16,7 +16,9 @@ function VideoSlider({ title, items }: VideoSliderProps) {
   const navigate = useNavigate();
 
   const handlePlay = (vid: VideoItem) => {
-    navigate(`/page/${vid.id}`, { state: vid });
+    if (vid.type !== "AD") {
+      navigate(`/page/${vid.id}`, { state: vid });
+    }
   };
 
   const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
@@ -65,7 +67,7 @@ function VideoSlider({ title, items }: VideoSliderProps) {
           <div
             key={index}
             onClick={() => handlePlay(item)}
-            className="relative w-[15vw] h-[20vh] bg-gray-800 rounded-lg overflow-hidden shrink-0 cursor-grab active:cursor-grabbing transition-transform hover:scale-105 group"
+            className={`relative w-[15vw] h-[20vh] bg-gray-800 rounded-lg overflow-hidden shrink-0 cursor-grab active:cursor-grabbing transition-transform  group ${item.type === "AD" ? "border-4 border-yellow-500 cursor-default" : "hover:scale-105"}`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -85,6 +87,11 @@ function VideoSlider({ title, items }: VideoSliderProps) {
                     <span>• {item.date}</span>
                   </div>
                   <p className="text-xs mt-2 line-clamp-1">{item.plot}</p>
+                  {item.type === "AD" && (
+                    <button className="mt-2 bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-all">
+                      Visit Now
+                    </button>
+                  )}
                 </div>
               </>
             ) : (
