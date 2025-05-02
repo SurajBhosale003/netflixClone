@@ -18,10 +18,31 @@ const CustomVideoPlayer: React.FC<Props> = ({ source, adSchedule }) => {
   const videoNode = useRef<HTMLVideoElement>(null);
   const hlsInstance = useRef<Hls | null>(null);
   const playerRef = useRef<any>(null);
+  const wasFullscreen = useRef(false);
 
   const [showAd, setShowAd] = useState(false);
   const [currentAd, setCurrentAd] = useState<Ad | null>(null);
   const [triggered, setTriggered] = useState<Record<number, boolean>>({});
+
+  // Helper: Exit Fullscreen if in fullscreen
+  const exitFullscreen = () => {
+    const doc: any = document;
+    if (
+      doc.fullscreenElement ||
+      doc.webkitFullscreenElement ||
+      doc.mozFullScreenElement ||
+      doc.msFullscreenElement
+    ) {
+      wasFullscreen.current = true;
+      if (doc.exitFullscreen) doc.exitFullscreen();
+      else if (doc.webkitExitFullscreen) doc.webkitExitFullscreen();
+      else if (doc.mozCancelFullScreen) doc.mozCancelFullScreen();
+      else if (doc.msExitFullscreen) doc.msExitFullscreen();
+    } else {
+      wasFullscreen.current = false;
+    }
+  };
+  
 
   useEffect(() => {
     const initializePlayer = () => {
@@ -55,13 +76,13 @@ const CustomVideoPlayer: React.FC<Props> = ({ source, adSchedule }) => {
             setTriggered((prev) => ({ ...prev, [ad.time]: true }));
             setCurrentAd(ad);
             setShowAd(true);
+            exitFullscreen(); // ✅ Exit fullscreen before showing ad
             player.pause();
           }
         });
       });
     };
 
-    // Delay to ensure DOM is mounted
     const timeout = setTimeout(initializePlayer, 100);
 
     return () => {
@@ -74,15 +95,35 @@ const CustomVideoPlayer: React.FC<Props> = ({ source, adSchedule }) => {
   const handleAdEnded = () => {
     setShowAd(false);
     setCurrentAd(null);
-    playerRef.current?.play();
+  
+    const player = playerRef.current;
+    const videoElement = videoNode.current;
+  
+    if (player) {
+      player.currentTime(player.currentTime() + 1);
+      player.play();
+    }
+  
+    if (wasFullscreen.current && videoElement) {
+      const requestFullscreen =
+        videoElement.requestFullscreen ||
+        videoElement.webkitRequestFullscreen ||
+        videoElement.mozRequestFullScreen ||
+        videoElement.msRequestFullscreen;
+  
+      if (requestFullscreen) {
+        requestFullscreen.call(videoElement);
+      }
+    }
   };
+  
 
   return (
     <div className="relative w-full h-full bg-black">
-      <video
-        ref={videoNode}
-        className="video-js vjs-big-play-centered w-full h-full"
-      />
+        <video
+          ref={videoNode}
+          className="video-js vjs-big-play-centered w-full h-auto max-h-[80vh]"
+        />
 
       {showAd && currentAd && (
         <div className="absolute inset-0 z-50 bg-black flex flex-col items-center justify-center">
@@ -92,18 +133,20 @@ const CustomVideoPlayer: React.FC<Props> = ({ source, adSchedule }) => {
             onEnded={handleAdEnded}
             className="w-full h-full object-contain"
           />
-          <div className="absolute bottom-6 right-6">
-            <button
-              onClick={() => window.open(currentAd.link, "_blank")}
-              className="bg-yellow-400 hover:bg-yellow-500 px-4 py-2 font-bold rounded"
-            >
-              Visit Now
-            </button>
-          </div>
+          {currentAd.link && (
+            <div className="absolute bottom-6 right-6">
+              <button
+                onClick={() => window.open(currentAd.link, "_blank")}
+                className="bg-yellow-400 hover:bg-yellow-500 px-4 py-2 font-bold rounded"
+              >
+                Visit Now
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>
   );
 };
 
-export default CustomVideoPlayer; 
+export default CustomVideoPlayer;

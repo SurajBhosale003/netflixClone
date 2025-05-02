@@ -31,7 +31,7 @@ function PlayerV(): JSX.Element {
   }, [videoData, navigate]);
 
   return (
-    <div className="fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-50">
+    <div className="fixed top-0 left-0 w-screen bg-black flex items-center justify-center z-50">
       {videoData && (
         <CustomVideoPlayer
           source={videoData.fullVideo?videoData.fullVideo:""}
