@@ -5,7 +5,7 @@ import Footer from "./components/utility/Footer";
 import Home from "./pages/Home"; 
 import PageData from "./pages/PageData";
 import PlayerV from "./pages/PlayerV";
-
+import SHKplayer2 from "./pages/SHKplayer2";
 function App() {
   const [scrolled, setScrolled] = useState(false)
 
@@ -27,6 +27,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/SHK2" element={<SHKplayer2 />} />
           <Route path="/page/:id" element={<PageData />} />
           <Route path="/player/:id" element={<PlayerV />} />
         </Routes>

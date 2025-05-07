@@ -1,4 +1,4 @@
-import { useState, useRef, MouseEvent } from "react";
+import { useState, useRef, MouseEvent, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { VideoItem } from "../../content/VideoOBJ";
 
@@ -9,11 +9,17 @@ interface VideoSliderProps {
 
 function VideoSlider({ title, items }: VideoSliderProps) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
 
   const handlePlay = (vid: VideoItem) => {
     if (vid.type !== "AD") {
@@ -52,6 +58,14 @@ function VideoSlider({ title, items }: VideoSliderProps) {
   const optimizeCloudinaryVideo = (url: string) =>
     url.replace("/upload/", "/upload/f_auto,q_auto/");
 
+  const renderSkeletons = () =>
+    Array.from({ length: 6 }).map((_, index) => (
+      <div
+        key={index}
+        className="w-[15vw] h-[20vh] bg-gray-700 animate-pulse rounded-lg shrink-0"
+      />
+    ));
+
   return (
     <div className="mt-12 px-6 mb-12 ml-[0vw] mr-[0vw]">
       <h2 className="text-white text-2xl font-bold mb-4">{title}</h2>
@@ -63,46 +77,58 @@ function VideoSlider({ title, items }: VideoSliderProps) {
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
       >
-        {items.map((item, index) => (
-          <div
-            key={index}
-            onClick={() => handlePlay(item)}
-            className={`relative w-[15vw] h-[20vh] bg-gray-800 rounded-lg overflow-hidden shrink-0 cursor-grab active:cursor-grabbing transition-transform  group ${item.type === "AD" ? "border-4 border-yellow-500 cursor-default" : "hover:scale-105"}`}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            {hoveredIndex === index ? (
-              <>
-                <video
-                  src={optimizeCloudinaryVideo(item.video)}
-                  autoPlay
-                  muted
-                  loop
-                  className="w-full h-full object-cover pointer-events-none"
-                />
-                <div className="absolute inset-0 text-white flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <h3 className="text-lg font-bold">{item.title}</h3>
-                  <div className="flex items-center gap-2 text-sm mt-1">
-                    <span>⭐ {item.rating}</span>
-                    <span>• {item.date}</span>
-                  </div>
-                  <p className="text-xs mt-2 line-clamp-1">{item.plot}</p>
-                  {item.type === "AD" && (
-                    <button className="mt-2 bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-all">
-                      Visit Now
-                    </button>
-                  )}
-                </div>
-              </>
-            ) : (
-              <img
-                src={item.thumbnail}
-                alt={item.title}
-                className="w-full h-full object-cover pointer-events-none"
-              />
-            )}
-          </div>
-        ))}
+        {loading
+          ? renderSkeletons()
+          : items.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => handlePlay(item)}
+                className={`relative w-[15vw] h-[20vh] bg-gray-800 rounded-lg overflow-hidden shrink-0 cursor-grab active:cursor-grabbing transition-transform group ${
+                  item.type === "AD"
+                    ? "border-4 border-yellow-500 cursor-default"
+                    : "hover:scale-105"
+                }`}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {hoveredIndex === index ? (
+                  <>
+                    <video
+                      src={optimizeCloudinaryVideo(item.video)}
+                      autoPlay
+                      muted
+                      loop
+                      className="w-full h-full object-cover pointer-events-none"
+                    />
+                    <div className="absolute inset-0 text-white flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/70 to-transparent">
+                      <h3 className="text-lg font-bold">{item.title}</h3>
+                      <div className="flex items-center gap-2 text-sm mt-1">
+                        <span>⭐ {item.rating}</span>
+                        <span>• {item.date}</span>
+                      </div>
+                      <p className="text-xs mt-2 line-clamp-1">{item.plot}</p>
+                      {item.type === "AD" && (
+                        <button
+                          className="mt-2 bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-all"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            // window.open(item.link || "#", "_blank");
+                          }}
+                        >
+                          Visit Now
+                        </button>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className="w-full h-full object-cover pointer-events-none"
+                  />
+                )}
+              </div>
+            ))}
       </div>
     </div>
   );

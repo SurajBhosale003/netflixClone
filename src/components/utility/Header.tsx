@@ -1,16 +1,61 @@
-import { useState } from "react"
-import { ChevronDown, Bell, Search, Menu, X } from "lucide-react"
-
+import { useState } from "react";
+import { ChevronDown, Bell, Search, Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import './Header.css'
 interface HeaderProps {
-  scrolled: boolean
+  scrolled: boolean;
 }
 
 const Header = ({ scrolled }: HeaderProps) => {
-  const [showProfileMenu, setShowProfileMenu] = useState(false)
-  const [showLanguageMenu, setShowLanguageMenu] = useState(false)
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  return (
+  const isPlayerPage = /^\/player\/[^/]+$/.test(location.pathname); 
+
+  if (isPlayerPage) {
+    return (
+      <>
+      
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+          scrolled ? "bg-black" : "bg-gradient-to-b from-black/80 to-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+          <button
+              onClick={() => navigate(-1)}
+              className="text-white bg-gray-800 hover:bg-gray-700 rounded-full px-4 py-2 text-sm"
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="2em"
+              height="2em"
+            >
+              <path
+                fill="currentColor"
+                d="m4 10l-.707.707L2.586 10l.707-.707zm17 8a1 1 0 1 1-2 0zM8.293 15.707l-5-5l1.414-1.414l5 5zm-5-6.414l5-5l1.414 1.414l-5 5zM4 9h10v2H4zm17 7v2h-2v-2zm-7-7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5z"
+              ></path>
+            </svg>
+           </button>
+            <img
+              className="h-[5rem] w-[10rem]"
+              src="https://storage.googleapis.com/1000gns/1001/assets/logo.png"
+              alt="Logo"
+            />
+          </div>
+        </div>
+      </header>
+      </>
+    );
+  }
+
+  // Regular Header (unchanged)
+   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled ? "bg-black" : "bg-gradient-to-b from-black/80 to-transparent"
@@ -102,7 +147,6 @@ const Header = ({ scrolled }: HeaderProps) => {
         </div>
       )}
     </header>
-  )
-}
+  )};
 
-export default Header
+export default Header;

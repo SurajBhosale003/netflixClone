@@ -1,21 +1,37 @@
 
 export type VideoItem = {
-    id: string;
-    thumbnail: string;
-    video: string;
-    fullVideo: string;
-    title: string;
-    description: string;
-    rating: number;
-    date: string;
-    plot: string;
-    genre: string[];      
-    language: string;
-    duration: string;
-    cast: string[];      
-    director: string;
-    type: "Movie" | "Show" | "Documentary" | "News" | "Classic" | "Historical" | "Sci-Fi" | "Thriller" | "Superhero" | "AD" | "Cartoon"; 
-  };
+  id: string;
+  thumbnail: string;
+  video: string;
+  fullVideo: string;
+  title: string;
+  description: string;
+  rating: number;
+  date: string;
+  plot: string;
+  genre: string[];
+  language: string;
+  duration: string;
+  cast: string[];
+  director: string;
+  
+  type: 
+    | "Movie" 
+    | "Show" 
+    | "Documentary" 
+    | "News" 
+    | "Classic" 
+    | "Historical" 
+    | "Sci-Fi" 
+    | "Thriller" 
+    | "Superhero" 
+    | "AD" 
+    | "Cartoon";
+  FHDPreview?: string;
+  HDPreview?: string;
+  SDPreview?: string;
+  LDPreview?: string;
+};
 
 export const CartoonMovies : VideoItem[] =[
   {
@@ -23,8 +39,12 @@ export const CartoonMovies : VideoItem[] =[
     "title": "Gulliver's Travels",
     "description": "Gulliver's Travels 1939 movie trailer",
     "thumbnail": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/gullivers_travels/500px-Gulliverstravelsopening1939.jpeg",
-    "video": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/gullivers_travels/gullivers_travels1939_512kb.mp4",
-    "fullVideo": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/gullivers_travels/gullivers_travels1939_512kb.mp4",
+    "video": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/gullivers_travels/GulliversTravels-Trans/preview/originalpreview/original.mp4",
+    "FHDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/gullivers_travels/GulliversTravels-Trans/preview/originalpreview/original.mp4",
+    "HDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/gullivers_travels/GulliversTravels-Trans/preview/originalpreview/original.mp4",
+    "SDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/gullivers_travels/GulliversTravels-Trans/preview/originalpreview/original.mp4",
+    "LDPreview" : "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/gullivers_travels/GulliversTravels-Trans/preview/originalpreview/original.mp4",
+    "fullVideo": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/gullivers_travels/GulliversTravels-Trans/master.m3u8",
     "rating": 4.0,
     "date": "1939",
     "plot": "A musical animated adventure following the travels of Lemuel Gulliver as he encounters strange societies and fantastical creatures.",
@@ -40,8 +60,12 @@ export const CartoonMovies : VideoItem[] =[
     "title": "Elio",
     "description": "Official Trailer - Pixar",
     "thumbnail": "https://i0.wp.com/atthemoviesonline.com/wp-content/uploads/2023/06/MV5BZDhkMTU1ZjYtNzFiOS00N2U5LTg2M2QtZmMxMTFhZmJmZGY5XkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_.jpg?fit=1400%2C700&ssl=1",
-    "video": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/Elio/Elio%20%20Official%20Trailer%20-%20Pixar%20(720p%2C%20h264).mp4",
-    "fullVideo": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/Elio/Elio%20%20Official%20Trailer%20-%20Pixar%20(720p%2C%20h264).mp4",
+    "video": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Elio/Elio-Trans/preview/SDpreview/SDpreview.mp4",
+    "FHDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Elio/Elio-Trans/preview/originalpreview/original.mp4",
+    "HDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Elio/Elio-Trans/preview/originalpreview/original.mp4",
+    "SDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Elio/Elio-Trans/preview/SDpreview/SDpreview.mp4",
+    "LDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Elio/Elio-Trans/preview/LDpreview/LDpreview.mp4",
+    "fullVideo": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Elio/Elio-Trans/master.m3u8",
     "rating": 4.5,
     "date": "2023",
     "plot": "A young boy discovers he has an alien heritage and embarks on an intergalactic adventure that will change the course of history.",
@@ -74,8 +98,12 @@ export const CartoonMovies : VideoItem[] =[
     "title": "How To Train Your Dragon",
     "description": "Official Trailer - Universal Pictures",
     "thumbnail": "https://images.squarespace-cdn.com/content/v1/54400c3de4b06a018e97259e/df065393-55e9-4145-b07a-3c93ab9b81ea/AAAABYuoBJ8JQWVPnv7rmbLLfRZoIigxFxqz2JlHIpQkdU_tN31tzZ3cYu8uYkwOk5_6Bjklz2HkvGx_PqOPQTc7LJqkyhSb.jpg",
-    "video": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/How%20To%20Train%20Your%20Dragon/How%20To%20Train%20Your%20Dragon%20%20Official%20Trailer%20-%20Universal%20Pictures%20(720p%2C%20h264).mp4",
-    "fullVideo": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/How%20To%20Train%20Your%20Dragon/How%20To%20Train%20Your%20Dragon%20%20Official%20Trailer%20-%20Universal%20Pictures%20(720p%2C%20h264).mp4",
+    "video": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/How%20To%20Train%20Your%20Dragon/HowToTrainYourDragon-Trans/preview/SDpreview/SDpreview.mp4",
+    "FHDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/How%20To%20Train%20Your%20Dragon/HowToTrainYourDragon-Trans/preview/originalpreview/original.mp4",
+    "HDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/How%20To%20Train%20Your%20Dragon/HowToTrainYourDragon-Trans/preview/HDpreview/HDpreview.mp4",
+    "SDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/How%20To%20Train%20Your%20Dragon/HowToTrainYourDragon-Trans/preview/SDpreview/SDpreview.mp4",
+    "LDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/How%20To%20Train%20Your%20Dragon/HowToTrainYourDragon-Trans/preview/LDpreview/LDpreview.mp4",
+    "fullVideo": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/How%20To%20Train%20Your%20Dragon/HowToTrainYourDragon-Trans/master.m3u8",
     "rating": 4.8,
     "date": "2010",
     "plot": "A young Viking befriends a dragon, changing the future of his village and discovering a new way of life.",
@@ -91,8 +119,12 @@ export const CartoonMovies : VideoItem[] =[
     "title": "Moana 2",
     "description": "Official Trailer - Walt Disney Animation Studios",
     "thumbnail": "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E7969CDB6F7D30CE05984DC8D31429B38267AAD1C2B16B1545E6976B49F95120/scale?width=1200&aspectRatio=1.78&format=webp",
-    "video": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/Moana2/Moana%202%20%20Official%20Trailer%20-%20Walt%20Disney%20Animation%20Studios%20(720p%2C%20h264).mp4",
-    "fullVideo": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/Moana2/Moana%202%20%20Official%20Trailer%20-%20Walt%20Disney%20Animation%20Studios%20(720p%2C%20h264).mp4",
+    "video": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Moana2/Moana2-Trans/preview/SDpreview/SDpreview.mp4",
+    "FHDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Moana2/Moana2-Trans/preview/originalpreview/original.mp4",
+    "HDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Moana2/Moana2-Trans/preview/originalpreview/original.mp4",
+    "SDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Moana2/Moana2-Trans/preview/SDpreview/SDpreview.mp4",
+    "LDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Moana2/Moana2-Trans/preview/LDpreview/LDpreview.mp4",
+    "fullVideo": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/Moana2/Moana2-Trans/master.m3u8",
     "rating": 4.6,
     "date": "2023",
     "plot": "Moana returns to the sea for another adventure, this time to save her island from an impending danger.",
@@ -104,21 +136,25 @@ export const CartoonMovies : VideoItem[] =[
     "type": "Cartoon"
   },
   {
-    "id": "BADGUYS-2022",
-    "title": "The Bad Guys",
-    "description": "Official Trailer 1 - Universal Pictures",
-    "thumbnail": "https://occ-0-8407-90.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABcNTrI7fcrdBwxPMixjSzabQZL3qPbPxsHp1YjvNKzIAKmYN979yymTUs3W_mzwEifdU0_J0bmvTnL7E2Gfbdi17NSHJpiRwEUV2.jpg?r=639",
-    "video": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/The%20Bad%20Guys/THE%20BAD%20GUYS%20%20Official%20Trailer%201%20-%20Universal%20Pictures%20(1080p%2C%20h264).mp4",
-    "fullVideo": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/The%20Bad%20Guys/THE%20BAD%20GUYS%20%20Official%20Trailer%201%20-%20Universal%20Pictures%20(1080p%2C%20h264).mp4",
-    "rating": 4.2,
-    "date": "2022",
-    "plot": "A group of reformed criminals embark on an adventure to save the world from an evil villain.",
-    "genre": ["Animation", "Action", "Comedy"],
-    "language": "English",
-    "duration": "1h 40m",
-    "cast": ["Sam Rockwell", "Awkwafina", "Marc Maron"],
-    "director": "Pierre Perifel",
-    "type": "Cartoon"
+    id: "BADGUYS-2022",
+    title: "The Bad Guys",
+    description: "Official Trailer 1 - Universal Pictures",
+    thumbnail: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuysThumb.jpg",
+    video: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/HDpreview/HDpreview.mp4",
+    FHDPreview: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/originalpreview/original.mp4",
+    HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/HDpreview/HDpreview.mp4",
+    SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/SDpreview/SDpreview.mp4",
+    LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/LDpreview/LDpreview.mp4",
+    fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/master.m3u8",
+    rating: 4.2,
+    date: "2022",
+    plot: "A group of reformed criminals embark on an adventure to save the world from an evil villain.",
+    genre: ["Animation", "Action", "Comedy"],
+    language: "English",
+    duration: "1h 40m",
+    cast: ["Sam Rockwell", "Awkwafina", "Marc Maron"],
+    director: "Pierre Perifel",
+    type: "Cartoon"
   },
   {
     id: "hairAds-001",
@@ -142,8 +178,12 @@ export const CartoonMovies : VideoItem[] =[
     "title": "The Wild Robot",
     "description": "Official Trailer - Universal Pictures",
     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv-1CT1BhqMy3kvNVV2aTRas0wNMz51UYwAg&s",
-    "video": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/The%20Wild%20Robot/The%20Wild%20Robot%20%20Official%20Trailer%20-%20Universal%20Pictures%20(720p%2C%20h264).mp4",
-    "fullVideo": "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/The%20Wild%20Robot/The%20Wild%20Robot%20%20Official%20Trailer%20-%20Universal%20Pictures%20(720p%2C%20h264).mp4",
+    "video": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/HDpreview/HDpreview.mp4",
+    "FHDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Wild%20Robot/TheWildRobot-Trans/preview/originalpreview/original.mp4",
+    "HDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/HDpreview/HDpreview.mp4",
+    "SDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/SDpreview/SDpreview.mp4",
+    "LDPreview":"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/LDpreview/LDpreview.mp4",
+    "fullVideo": "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Wild%20Robot/TheWildRobot-Trans/master.m3u8",
     "rating": 4.4,
     "date": "2023",
     "plot": "A robot, stranded on a remote island, learns to adapt and form bonds with the local wildlife.",
@@ -156,7 +196,6 @@ export const CartoonMovies : VideoItem[] =[
   }
 ]
 
-  
 export const ActionMovies : VideoItem[] = [
   {
     id: "barAds-001",
@@ -180,8 +219,12 @@ export const ActionMovies : VideoItem[] = [
       title: "Civil War Official Trailer",
       description: "The official trailer for the Civil War movie, a gripping story that delves into the epic battles of the American Civil War.",
       thumbnail: "https://i.ytimg.com/vi/aDyQxtg0V2w/maxresdefault.jpg",
-      video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Civil%20War/Civil%20War",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Civil%20War/Civil%20War",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Civil%20War/CivilWar-Trans/preview/SDpreview/SDpreview.mp4",
+      FHDPreview : "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Civil%20War/CivilWar-Trans/preview/originalpreview/original.mp4",
+      HDPreview : "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Civil%20War/CivilWar-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview : "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Civil%20War/CivilWar-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview : "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Civil%20War/CivilWar-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Civil%20War/CivilWar-Trans/master.m3u8",
       rating: 4.5,
       date: "2023",
       plot: "An intense and emotional portrayal of the Civil War, focusing on the individuals who lived through it and the choices they had to make.",
@@ -197,8 +240,12 @@ export const ActionMovies : VideoItem[] = [
       title: "Mortal Engines Official Trailer",
       description: "The official trailer for Mortal Engines, a post-apocalyptic adventure where cities move on massive wheels and battle each other for survival.",
       thumbnail: "https://i.ytimg.com/vi/IRsFc2gguEg/sddefault.jpg",
-      video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Mortal%20Engines/Mortal%20Engines%20-%20Official%20Trailer%20(HD)%20-%20Universal%20Pictures%20(720p%2C%20h264).mp4",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Mortal%20Engines/Mortal%20Engines%20-%20Official%20Trailer%20(HD)%20-%20Universal%20Pictures%20(720p%2C%20h264).mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Mortal%20Engines/MortalEngines-Trans/preview/HDpreview/HDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Mortal%20Engines/MortalEngines-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Mortal%20Engines/MortalEngines-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Mortal%20Engines/MortalEngines-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Mortal%20Engines/MortalEngines-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Mortal%20Engines/MortalEngines-Trans/master.m3u8",
       rating: 4.0,
       date: "2018",
       plot: "A thrilling adventure set in a futuristic world where cities roam the earth, devouring each other in a desperate fight for resources.",
@@ -214,8 +261,12 @@ export const ActionMovies : VideoItem[] = [
       title: "Predator Badlands Teaser Trailer",
       description: "A teaser trailer for Predator: Badlands, the latest installment in the iconic Predator franchise, set in the hostile badlands.",
       thumbnail: "https://i.ytimg.com/vi/15wupYlLAGM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBxS9iwXOlhOXDG6WwjOxmT6dc21Q",
-      video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Predator%20Badlands/Predator%20Badlands%20%20Teaser%20Trailer%20-%2020th%20Century%20Studios%20(1080p%2C%20h264).mp4",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Predator%20Badlands/Predator%20Badlands%20%20Teaser%20Trailer%20-%2020th%20Century%20Studios%20(1080p%2C%20h264).mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Predator%20Badlands/PredatorBadlands-Trans/preview/SDpreview/SDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Predator%20Badlands/PredatorBadlands-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Predator%20Badlands/PredatorBadlands-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Predator%20Badlands/PredatorBadlands-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Predator%20Badlands/PredatorBadlands-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Predator%20Badlands/PredatorBadlands-Trans/master.m3u8",
       rating: 4.3,
       date: "2022",
       plot: "A Predator arrives in a desolate, dangerous wasteland, where a group of survivors must fight for their lives.",
@@ -232,7 +283,11 @@ export const ActionMovies : VideoItem[] = [
       description: "Marvel Studios' Thunderbolts trailer, introducing a new group of heroes and antiheroes tasked with saving the world.",
       thumbnail: "https://i.ytimg.com/vi/ccgGSrXhUFc/maxresdefault.jpg",
       video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Thunderbolts/Marvel%20Studios'%20Thunderbolts%20%20Official%20Trailer%20%20In%20Cinemas%20May%201%20-%20IndiaMarvel%20(1080p%2C%20h264).mp4",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/Thunderbolts/Marvel%20Studios'%20Thunderbolts%20%20Official%20Trailer%20%20In%20Cinemas%20May%201%20-%20IndiaMarvel%20(1080p%2C%20h264).mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Thunderbolts/ThunderBolts-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Thunderbolts/ThunderBolts-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Thunderbolts/ThunderBolts-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/Thunderbolts/ThunderBolts-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/Thunderbolts/ThunderBolts-Trans/master.m3u8",
       rating: 4.7,
       date: "2023",
       plot: "Thunderbolts brings together a group of unconventional superheroes and antiheroes as they face a dangerous threat to the world.",
@@ -261,13 +316,7 @@ export const ActionMovies : VideoItem[] = [
       type: "AD"
     }
   
-]
-  
-
-  
-
-
-
+] 
 
 export const ClassicMovies : VideoItem[] = [
     {
@@ -275,8 +324,12 @@ export const ClassicMovies : VideoItem[] = [
       title: "Royal Wedding",
       description: "In this classic musical romance, a brother and sister dance duo travel to London during the Royal Wedding of Princess Elizabeth. Amid elegant ballrooms and wartime uncertainties, romance blossoms and the show must go on.",
       thumbnail: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/royal_wedding/500px-Fred_Astaire_and_Jane_Powell_in_Royal_Wedding.jpg",
-      video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/royal_wedding/royal_wedding_512kb.mp4",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/royal_wedding/royal_wedding_512kb.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/royal_wedding/RoyalWedding-Trans/preview/originalpreview/original.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/royal_wedding/RoyalWedding-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/royal_wedding/RoyalWedding-Trans/preview/originalpreview/original.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/royal_wedding/RoyalWedding-Trans/preview/originalpreview/original.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/royal_wedding/RoyalWedding-Trans/preview/originalpreview/original.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/royal_wedding/RoyalWedding-Trans/master.m3u8",
       rating: 4.2,
       date: "1951",
       plot: "Fred Astaire and Jane Powell star in this delightful tale of dance, love, and royal celebration, set against the backdrop of the 1947 royal wedding in London.",
@@ -309,8 +362,12 @@ export const ClassicMovies : VideoItem[] = [
       title: "Meet John Doe",
       description: "A cynical journalist and a down-on-his-luck drifter create a fictional man to criticize society, but the hoax takes on a life of its own in this gripping drama.",
       thumbnail: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/meet_john_doe/Poster_-_Meet_John_Doe_01.jpg",
-      video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/meet_john_doe/meet_john_doe_512kb.mp4",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/meet_john_doe/meet_john_doe_512kb.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/meet_john_doe/MeetJohnDoe-Trans/preview/originalpreview/original.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/meet_john_doe/MeetJohnDoe-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/meet_john_doe/MeetJohnDoe-Trans/preview/originalpreview/original.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/meet_john_doe/MeetJohnDoe-Trans/preview/originalpreview/original.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/meet_john_doe/MeetJohnDoe-Trans/preview/originalpreview/original.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/meet_john_doe/MeetJohnDoe-Trans/master.m3u8",
       rating: 4.6,
       date: "1941",
       plot: "Frank Capra’s powerful commentary on media manipulation and the human spirit, featuring a moving performance by Gary Cooper.",
@@ -326,8 +383,12 @@ export const ClassicMovies : VideoItem[] = [
       title: "The Little Princess",
       description: "When her father goes missing in war, a spirited young girl faces hardships at boarding school but never loses hope in this heartfelt classic.",
       thumbnail: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/little_princess/500px-Little_Princess_4.jpeg",
-      video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/little_princess/little_princess_512kb.mp4",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/little_princess/little_princess_512kb.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/little_princess/LittlePrincess-Trans/preview/originalpreview/original.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/little_princess/LittlePrincess-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/little_princess/LittlePrincess-Trans/preview/originalpreview/original.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/little_princess/LittlePrincess-Trans/preview/originalpreview/original.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/little_princess/LittlePrincess-Trans/preview/originalpreview/original.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/little_princess/LittlePrincess-Trans/master.m3u8",
       rating: 4.3,
       date: "1939",
       plot: "Shirley Temple stars as a hopeful young girl who refuses to believe her beloved father is lost in battle.",
@@ -360,8 +421,12 @@ export const ClassicMovies : VideoItem[] = [
       title: "The Iron Mask",
       description: "An epic swashbuckling tale of intrigue, brotherhood, and a secret twin. The Musketeers return to defend France in this silent-era classic.",
       thumbnail: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/iron_mask/500px-Ironmaskposter.jpg",
-      video: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/iron_mask/iron_mask_512kb.mp4",
-      fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/movies/iron_mask/iron_mask_512kb.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/iron_mask/IronMask-Trans/preview/originalpreview/original.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/iron_mask/IronMask-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/iron_mask/IronMask-Trans/preview/originalpreview/original.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/iron_mask/IronMask-Trans/preview/originalpreview/original.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Movies/iron_mask/IronMask-Trans/preview/originalpreview/original.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Movies/iron_mask/IronMask-Trans/master.m3u8",
       rating: 4.0,
       date: "1929",
       plot: "Douglas Fairbanks leads a daring tale of adventure and hidden royalty, adapted from the final part of Dumas' Musketeer saga.",
@@ -376,15 +441,18 @@ export const ClassicMovies : VideoItem[] = [
     
 ] 
 
-
 export const videos: VideoItem[] = [
   {
     id: "BADGUYS-2022",
     title: "The Bad Guys",
     description: "Official Trailer 1 - Universal Pictures",
-    thumbnail: "https://occ-0-8407-90.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABcNTrI7fcrdBwxPMixjSzabQZL3qPbPxsHp1YjvNKzIAKmYN979yymTUs3W_mzwEifdU0_J0bmvTnL7E2Gfbdi17NSHJpiRwEUV2.jpg?r=639",
-    video: "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/The%20Bad%20Guys/THE%20BAD%20GUYS%20%20Official%20Trailer%201%20-%20Universal%20Pictures%20(1080p%2C%20h264).mp4",
-    fullVideo: "https://storage.googleapis.com/1000gns/1001/content/videos/cartoons/The%20Bad%20Guys/THE%20BAD%20GUYS%20%20Official%20Trailer%201%20-%20Universal%20Pictures%20(1080p%2C%20h264).mp4",
+    thumbnail: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuysThumb.jpg",
+    video: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/HDpreview/HDpreview.mp4",
+    FHDPreview: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/originalpreview/original.mp4",
+    HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/HDpreview/HDpreview.mp4",
+    SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/SDpreview/SDpreview.mp4",
+    LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/preview/LDpreview/LDpreview.mp4",
+    fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/Cartoons/The%20Bad%20Guys/BadGuys-Trans/master.m3u8",
     rating: 4.2,
     date: "2022",
     plot: "A group of reformed criminals embark on an adventure to save the world from an evil villain.",
@@ -413,29 +481,16 @@ export const videos: VideoItem[] = [
     type: "AD"
   },
     {
-      id: "saloN-z6p8",
-      title: "Ringing In 2022 With Style",
-      description: "After months of careful and detailed planning by a local youth council, a New Year’s Eve Dance was held on Friday night, Dec. 31, for Moapa Valley teens. The dance was held at the Logandale Stake Center of the Church of Jesus Christ of Latter-day Saints. Youth, ages 14 and up, from all over the Moapa Valley communities, gathered at the church to celebrate the final hours of 2021 and spend the beginning of 2022 together.",
-      thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909262/stream/video/01MainNewsVideo/01MainNewsThumb_z8d3cb.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909623/stream/video/01MainNewsVideo/01MainNewsVideo_online-video-cutter.com_smsmrd.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745908947/stream/video/01MainNewsVideo/01MainNewsVideo_ktjkop.mp4",
-      rating: 4.5,
-      date: "2020",
-      plot: "From ancient waterfalls to hidden river cities, explore how water shaped humanity’s greatest triumphs.",
-      genre: ["Documentary", "Travel", "History"],
-      language: "English",
-      duration: "1h 15m",
-      cast: ["Narrated by Oliver Brooks"],
-      director: "Isla Cascade",
-      type: "Documentary"
-    },
-    {
       id: "BIRD-a8f3",
       title: "Bird Adventures",
       description: "A stunning story of freedom, nature, and colorful birds soaring across continents.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909290/stream/video/02BirdVideo/02BirdThumb_xmr6ld.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745908977/stream/video/02BirdVideo/02BirdVideo_hprerk.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745908977/stream/video/02BirdVideo/02BirdVideo_hprerk.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/02BirdVideo/BirdVide0-Trans/preview/SDpreview/SDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/02BirdVideo/BirdVide0-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/02BirdVideo/BirdVide0-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/02BirdVideo/BirdVide0-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/02BirdVideo/BirdVide0-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/02BirdVideo/BirdVide0-Trans/master.m3u8",
       rating: 4.5,
       date: "2023",
       plot: "Follow the thrilling journey of a brave bird who defies storms, predators, and the unknown in search of its home.",
@@ -451,8 +506,12 @@ export const videos: VideoItem[] = [
       title: "Camera Girl",
       description: "Through the lens of a dreamer, ordinary life turns extraordinary.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909309/stream/video/03CameraGirlVideo/03CameraGirlThumb_gjucyi.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909006/stream/video/03CameraGirlVideo/03CameraGirlVideo_wd51px.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909006/stream/video/03CameraGirlVideo/03CameraGirlVideo_wd51px.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/03CameraGirlVideo/CameraGirlVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/03CameraGirlVideo/CameraGirlVideo-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/03CameraGirlVideo/CameraGirlVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/03CameraGirlVideo/CameraGirlVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/03CameraGirlVideo/CameraGirlVideo-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/03CameraGirlVideo/CameraGirlVideo-Trans/master.m3u8",
       rating: 4.7,
       date: "2022",
       plot: "A young photographer stumbles upon a hidden world invisible to the naked eye, changing her destiny forever.",
@@ -468,8 +527,12 @@ export const videos: VideoItem[] = [
       title: "Fish Tales",
       description: "Discover the breathtaking wonders of life beneath the ocean.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909322/stream/video/04FishVideo/04FishThumb_zmr0gm.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909143/stream/video/04FishVideo/04FishVideo_fjvioc.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909143/stream/video/04FishVideo/04FishVideo_fjvioc.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/04FishVideo/FishVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/04FishVideo/FishVideo-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/04FishVideo/FishVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/04FishVideo/FishVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/04FishVideo/FishVideo-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/04FishVideo/FishVideo-Trans/master.m3u8",
       rating: 4.3,
       date: "2021",
       plot: "Dive deep into crystal-clear waters and witness the secret lives of the ocean’s most fascinating creatures.",
@@ -485,8 +548,12 @@ export const videos: VideoItem[] = [
       title: "Flower Kingdom",
       description: "Step into a magical realm where every petal tells a story.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909350/stream/video/05FlowerVideo/05FlowerThumb_azxpna.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909161/stream/video/05FlowerVideo/05FlowerVideo_rruzqd.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909161/stream/video/05FlowerVideo/05FlowerVideo_rruzqd.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/05FlowerVideo/FlowerVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/05FlowerVideo/FlowerVideo-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/05FlowerVideo/FlowerVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/05FlowerVideo/FlowerVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/05FlowerVideo/FlowerVideo-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/05FlowerVideo/FlowerVideo-Trans/master.m3u8",
       rating: 4.6,
       date: "2020",
       plot: "An enchanting journey through fields of vivid color and whispered myths hidden among blooms.",
@@ -502,8 +569,12 @@ export const videos: VideoItem[] = [
       title: "Leaf Chronicles",
       description: "Nature’s poetry in motion across the changing seasons.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909369/stream/video/06LeafVideo/06LeafThumb_foobm8.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909209/stream/video/06LeafVideo/06LeafVideo_mmpoky.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909209/stream/video/06LeafVideo/06LeafVideo_mmpoky.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/06LeafVideo/LeafVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/06LeafVideo/LeafVideo-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/06LeafVideo/LeafVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/06LeafVideo/LeafVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/06LeafVideo/LeafVideo-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/06LeafVideo/LeafVideo-Trans/master.m3u8",
       rating: 4.4,
       date: "2022",
       plot: "A tiny leaf embarks on an epic adventure from towering forests to bustling city streets.",
@@ -519,8 +590,12 @@ export const videos: VideoItem[] = [
       title: "Pyramid Secrets",
       description: "Unlock the mysteries buried deep beneath ancient sands.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909393/stream/video/07PyrmdVideo/07PyrmdThumb_ns0els.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909082/stream/video/07PyrmdVideo/07PyrmdVideo_wejjqd.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909082/stream/video/07PyrmdVideo/07PyrmdVideo_wejjqd.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/07PyrmdVideo/PyrmdVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/07PyrmdVideo/PyrmdVideo-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/07PyrmdVideo/PyrmdVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/07PyrmdVideo/PyrmdVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/07PyrmdVideo/PyrmdVideo-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/07PyrmdVideo/PyrmdVideo-Trans/master.m3u8",
       rating: 4.8,
       date: "2023",
       plot: "Archaeologists uncover hidden chambers and forgotten treasures inside the greatest pyramids ever built.",
@@ -536,8 +611,12 @@ export const videos: VideoItem[] = [
       title: "City of Water",
       description: "A surreal future where dreams float and cities breathe underwater.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909413/stream/video/08WaterCityVideo/08WaterCityThumb_ba9emc.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909093/stream/video/08WaterCityVideo/08WaterCityVideo_e0dsag.mp4",
-      fullVideo: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909093/stream/video/08WaterCityVideo/08WaterCityVideo_e0dsag.mp4",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/08WaterCityVideo/WaterCityVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/08WaterCityVideo/WaterCityVideo-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/08WaterCityVideo/WaterCityVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/08WaterCityVideo/WaterCityVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/08WaterCityVideo/WaterCityVideo-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/08WaterCityVideo/WaterCityVideo-Trans/master.m3u8",
       rating: 4.2,
       date: "2021",
       plot: "A breathtaking story of hope, architecture, and humanity’s survival beneath the seas.",
@@ -553,8 +632,12 @@ export const videos: VideoItem[] = [
       title: "Waves of Time",
       description: "Ancient rivers and waterfalls carve the story of civilization.",
       thumbnail: "https://res.cloudinary.com/de6u5kbiw/image/upload/v1745909435/stream/video/09WaterVideo/09WaterThumb_afxj7k.png",
-      video: "https://res.cloudinary.com/de6u5kbiw/video/upload/v1745909135/stream/video/09WaterVideo/09WaterVideo_q9mojn.mp4",
-      fullVideo: "",
+      video: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/09WaterVideo/WaterVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      FHDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/09WaterVideo/WaterVideo-Trans/preview/originalpreview/original.mp4",
+      HDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/09WaterVideo/WaterVideo-Trans/preview/HDpreview/HDpreview.mp4",
+      SDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/09WaterVideo/WaterVideo-Trans/preview/SDpreview/SDpreview.mp4",
+      LDPreview:"https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/09WaterVideo/WaterVideo-Trans/preview/LDpreview/LDpreview.mp4",
+      fullVideo: "https://storage.googleapis.com/1000gns/1001/1001content/DemoVideos/09WaterVideo/WaterVideo-Trans/master.m3u8",
       rating: 4.5,
       date: "2020",
       plot: "From ancient waterfalls to hidden river cities, explore how water shaped humanity’s greatest triumphs.",

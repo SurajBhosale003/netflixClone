@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mux/mux-player": "^3.4.0",
+    "@mux/mux-player-react": "^3.4.0",
     "@tailwindcss/vite": "^4.1.4",
     "@videojs/http-streaming": "^3.17.0",
     "hls.js": "^1.6.2",
@@ -18,7 +20,10 @@
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.5.0",
+    "react-player": "^2.16.0",
     "react-router-dom": "^6.30.0",
+    "shaka-player": "^4.14.10",
+    "shaka-player-react": "^1.1.5",
     "tailwind-scrollbar": "^4.0.2",
     "video.js": "^8.22.0",
     "videojs-contrib-ads": "^7.5.2",

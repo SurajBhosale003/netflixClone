@@ -5,6 +5,95 @@
 |-- package-lock.json
 |-- package.json
 |-- public
+    |-- audio
+        |-- audio.m3u8
+        |-- segment_000.ts
+        |-- segment_001.ts
+        |-- segment_002.ts
+        |-- segment_003.ts
+        |-- segment_004.ts
+        |-- segment_005.ts
+        |-- segment_006.ts
+        |-- segment_007.ts
+        |-- segment_008.ts
+        |-- segment_009.ts
+        |-- segment_010.ts
+        |-- segment_011.ts
+        |-- segment_012.ts
+        |-- segment_013.ts
+        |-- segment_014.ts
+    |-- master.m3u8
+    |-- preview
+        |-- HDpreview
+            |-- HDpreview.mp4
+        |-- LDpreview
+            |-- LDpreview.mp4
+        |-- SDpreview
+            |-- SDpreview.mp4
+    |-- v1080p
+        |-- CivilWar-Trans_v1080p_player.m3u8
+        |-- segment_000.ts
+        |-- segment_001.ts
+        |-- segment_002.ts
+        |-- segment_003.ts
+        |-- segment_004.ts
+        |-- segment_005.ts
+        |-- segment_006.ts
+        |-- segment_007.ts
+        |-- segment_008.ts
+        |-- segment_009.ts
+        |-- segment_010.ts
+        |-- segment_011.ts
+        |-- segment_012.ts
+        |-- segment_013.ts
+    |-- v360p
+        |-- CivilWar-Trans_v360p_player.m3u8
+        |-- segment_000.ts
+        |-- segment_001.ts
+        |-- segment_002.ts
+        |-- segment_003.ts
+        |-- segment_004.ts
+        |-- segment_005.ts
+        |-- segment_006.ts
+        |-- segment_007.ts
+        |-- segment_008.ts
+        |-- segment_009.ts
+        |-- segment_010.ts
+        |-- segment_011.ts
+        |-- segment_012.ts
+        |-- segment_013.ts
+    |-- v480p
+        |-- CivilWar-Trans_v480p_player.m3u8
+        |-- segment_000.ts
+        |-- segment_001.ts
+        |-- segment_002.ts
+        |-- segment_003.ts
+        |-- segment_004.ts
+        |-- segment_005.ts
+        |-- segment_006.ts
+        |-- segment_007.ts
+        |-- segment_008.ts
+        |-- segment_009.ts
+        |-- segment_010.ts
+        |-- segment_011.ts
+        |-- segment_012.ts
+        |-- segment_013.ts
+    |-- v720p
+        |-- CivilWar-Trans_v720p_player.m3u8
+        |-- segment_000.ts
+        |-- segment_001.ts
+        |-- segment_002.ts
+        |-- segment_003.ts
+        |-- segment_004.ts
+        |-- segment_005.ts
+        |-- segment_006.ts
+        |-- segment_007.ts
+        |-- segment_008.ts
+        |-- segment_009.ts
+        |-- segment_010.ts
+        |-- segment_011.ts
+        |-- segment_012.ts
+        |-- segment_013.ts
     |-- vite.svg
 |-- src
     |-- App.css
@@ -26,7 +115,9 @@
     |-- pages
         |-- Home.tsx
         |-- PageData.tsx
+        |-- PlayerShaka.tsx
         |-- PlayerV.tsx
+        |-- SHKplayer2.tsx
     |-- svg
         |-- LogoSVG.tsx
         |-- StarSVG.tsx
