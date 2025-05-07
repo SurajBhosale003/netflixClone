@@ -26,6 +26,7 @@ function Slider() {
       setIsAdPlaying(true);
       const adTimer = setTimeout(() => {
         setIsAdPlaying(false);
+        console.log(isAdPlaying)
         setCurrentIndex((prev) => (prev + 1) % videos.length);
       }, 15000);
       return () => clearTimeout(adTimer);

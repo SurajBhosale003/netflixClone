@@ -27,10 +27,6 @@ interface VideoData {
   video?: string;
 }
 
-interface Ad {
-  time: number;
-  adUrl: string;
-}
 function PlayerV(): JSX.Element {
   const { state } = useLocation();
   const navigate = useNavigate();
