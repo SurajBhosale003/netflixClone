@@ -1,15 +1,27 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback } from "react";
 import StarSVG from "../svg/StarSVG";
+import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MuteSVG } from "../svg/MuteSVG";
+import { UnmuteSVG } from "../svg/UnmuteSVG";
 
 function PageData() {
   const location = useLocation();
   const navigate = useNavigate();
   const videoData = location.state;
-
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [canLoadVideo, setCanLoadVideo] = useState(false); // Delay video loading for paint
 
+  // Mute Toggle
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
   // Delay non-critical video load after render
   useEffect(() => {
     if ("requestIdleCallback" in window) {
@@ -45,12 +57,14 @@ function PageData() {
       {/* Lazy-loaded Background video */}
       {canLoadVideo && previewVideo && (
         <video
+          ref={videoRef}
           src={previewVideo}
           preload="metadata"
           poster={videoData.thumbnail}
           autoPlay
           loop
           playsInline
+          muted={isMuted}
           onLoadedData={() => setIsVideoLoaded(true)}
           className="absolute top-0 left-0 w-full h-full object-cover z-0 transition-opacity duration-500"
         />
@@ -91,12 +105,42 @@ function PageData() {
       </div>
 
       {/* Rating Display */}
-      <div className="absolute bottom-[20vh] right-0 bg-gray-900 bg-opacity-80 p-3 rounded-l-lg shadow-lg pr-[5vw] z-10">
+      <div className="absolute bottom-[30vh] right-0 bg-gray-900 bg-opacity-80 p-3 rounded-l-lg shadow-lg pr-[5vw] z-10">
         <span className="text-2xl font-semibold text-white flex items-center gap-2">
           <StarSVG className="h-8 w-10" />
           {videoData.rating}
         </span>
       </div>
+      {/* Mute Toggle */}
+      <div
+      className="absolute bottom-[10vh] right-[10vh] z-10 cursor-pointer"
+      onClick={toggleMute}
+    >
+      <AnimatePresence mode="wait">
+        {isMuted ? (
+          <motion.div
+            key="mute"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 0.25 }}
+          >
+            <MuteSVG className="h-[10vh] w-[10vh] text-gray-300 opacity-40 hover:opacity-100 transition-opacity duration-300 ease-in-out" />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="unmute"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 0.25 }}
+          >
+            <UnmuteSVG className="h-[10vh] w-[10vh] text-gray-300 opacity-40 hover:opacity-100 transition-opacity duration-300 ease-in-out" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+
     </div>
   );
 }

@@ -12,7 +12,21 @@ interface NewsTickerProps {
 
 const NewsTicker: React.FC<NewsTickerProps> = ({ newsItems }) => {
   return (
-    <div className="w-full bg-black text-white py-2 px-4 flex items-center h-12">
+    <div
+      className="w-full py-2 px-4 flex items-center h-12"
+      style={{
+        background: "linear-gradient(to right, #e50914, #b81d24)",
+        color: "white",
+      }}
+    >
+      {/* Fixed Breaking News Image */}
+      <img
+        src="https://storage.googleapis.com/1000gns/1001/1001website/Images/newsBreak.png"
+        alt="Breaking News"
+        className="h-[11vh] w-auto mr-4 flex-shrink-0"
+      />
+
+      {/* Marquee with news items */}
       <Marquee gradient={false} speed={50} className="w-full">
         {newsItems.map((item, index) => (
           <span
@@ -23,7 +37,7 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ newsItems }) => {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline text-white transition-colors duration-200"
+              className="hover:underline text-white transition-colors duration-200 font-bold"
             >
               • {item.text}
             </a>

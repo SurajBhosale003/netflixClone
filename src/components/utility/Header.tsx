@@ -14,8 +14,8 @@ const Header = ({ scrolled }: HeaderProps) => {
   const navigate = useNavigate();
 
   const isPlayerPage = /^\/player\/[^/]+$/.test(location.pathname); 
-
-  if (isPlayerPage) {
+  const isContentWindow = /^\/page\/[^/]+$/.test(location.pathname); 
+  if (isPlayerPage || isContentWindow) {
     return (
       <>
       
@@ -25,20 +25,19 @@ const Header = ({ scrolled }: HeaderProps) => {
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center  space-x-4">
           <button
               onClick={() => navigate(-1)}
-              className="text-white bg-gray-800 hover:bg-gray-700 rounded-full px-4 py-2 text-sm"
+              className= "text-white bg-gray-800 hover:bg-gray-700 rounded-full px-2 py-2 text-sm opacity-40 hover:opacity-100 transition-opacity duration-300 ease-in-out"
             >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               width="2em"
               height="2em"
             >
               <path
                 fill="currentColor"
-                d="m4 10l-.707.707L2.586 10l.707-.707zm17 8a1 1 0 1 1-2 0zM8.293 15.707l-5-5l1.414-1.414l5 5zm-5-6.414l5-5l1.414 1.414l-5 5zM4 9h10v2H4zm17 7v2h-2v-2zm-7-7a7 7 0 0 1 7 7h-2a5 5 0 0 0-5-5z"
+                d="M16 21.308L6.692 12L16 2.692l1.064 1.064L8.819 12l8.244 8.244z"
               ></path>
             </svg>
            </button>
@@ -72,7 +71,7 @@ const Header = ({ scrolled }: HeaderProps) => {
           <img className="h-[5rem] w-[10rem] mr-8" aria-hidden="true" src="https://storage.googleapis.com/1000gns/1001/assets/logo.png" alt="" />
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-6">
-            <a href="" className="text-white hover:text-gray-300 font-medium">Home</a>
+            {/* <a href="" className="text-white hover:text-gray-300 font-medium">Home</a> */}
             <a href="" className="text-gray-300 hover:text-white">Local News</a>
             <a href="" className="text-gray-300 hover:text-white">Free Movies</a>
             <a href="" className="text-gray-300 hover:text-white">Cartoon & Kids</a>
