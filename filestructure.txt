@@ -33,7 +33,9 @@
         |-- SHKplayer2.tsx
     |-- svg
         |-- LogoSVG.tsx
+        |-- MuteSVG.tsx
         |-- StarSVG.tsx
+        |-- UnmuteSVG.tsx
     |-- vite-env.d.ts
 |-- tailwind.config.ts
 |-- tsconfig.app.json

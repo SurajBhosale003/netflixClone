@@ -38,6 +38,8 @@ function Slider() {
     }
   }, [currentIndex, isAd]);
 
+  
+
   const handlePrev = () => setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
   const handleNext = () => setCurrentIndex((prev) => (prev + 1) % videos.length);
 
@@ -71,7 +73,7 @@ function Slider() {
 
         {hovered || isAd ? (
           <video
-            key={currentVideo.video}
+            key={currentVideo.id}
             src={getVideoQuality(optimizeCloudinaryVideo(currentVideo.video))}
             autoPlay
             muted
