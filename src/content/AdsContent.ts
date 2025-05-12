@@ -4,7 +4,7 @@ interface Ad {
   }
 
 export const adSchedule: Ad[] = [
-    { time: 30, adUrl: "https://storage.googleapis.com/1000gns/1001/content/ads/Refined%20Ads/barAds.mp4" },
+    { time: 1, adUrl: "https://storage.googleapis.com/1000gns/1001/content/ads/Refined%20Ads/barAds.mp4" },
     { time: 60, adUrl: "https://storage.googleapis.com/1000gns/1001/content/ads/Refined%20Ads/cakeAds.mp4" },
     { time: 90, adUrl: "https://storage.googleapis.com/1000gns/1001/content/ads/Refined%20Ads/donutads.mp4" },
     { time: 120, adUrl: "https://storage.googleapis.com/1000gns/1001/content/ads/Refined%20Ads/friesAds.mp4" },
