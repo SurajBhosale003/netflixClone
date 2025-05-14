@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        marquee: "marquee 60s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
       fontFamily: {
         netflix: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
       },
@@ -24,6 +33,7 @@ const config: Config = {
   },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),
+    require('@tailwindcss/line-clamp'),
   ],
 }
 

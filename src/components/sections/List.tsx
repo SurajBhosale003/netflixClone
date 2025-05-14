@@ -54,10 +54,6 @@ function VideoSlider({ title, items }: VideoSliderProps) {
     const walk = (x - startX.current) * 1.5;
     sliderRef.current.scrollLeft = scrollLeft.current - walk;
   };
-
-  const optimizeCloudinaryVideo = (url: string) =>
-    url.replace("/upload/", "/upload/f_auto,q_auto/");
-
   const renderSkeletons = () =>
     Array.from({ length: 6 }).map((_, index) => (
       <div
@@ -94,10 +90,12 @@ function VideoSlider({ title, items }: VideoSliderProps) {
                 {hoveredIndex === index ? (
                   <>
                     <video
-                      src={optimizeCloudinaryVideo(item.video)}
+                      src={item.video}
                       autoPlay
                       muted
                       loop
+                      width="288"
+                      height="216"
                       className="w-full h-full object-cover pointer-events-none"
                     />
                     <div className="absolute inset-0 text-white flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-t from-black/70 to-transparent">
@@ -112,7 +110,6 @@ function VideoSlider({ title, items }: VideoSliderProps) {
                           className="mt-2 bg-yellow-500 text-black p-2 rounded-full hover:bg-yellow-600 transition-all"
                           onClick={(e) => {
                             e.stopPropagation();
-                            // window.open(item.link || "#", "_blank");
                           }}
                         >
                           Visit Now
@@ -124,6 +121,8 @@ function VideoSlider({ title, items }: VideoSliderProps) {
                   <img
                     src={item.thumbnail}
                     alt={item.title}
+                    width="288"
+                    height="216"
                     className="w-full h-full object-cover pointer-events-none"
                   />
                 )}

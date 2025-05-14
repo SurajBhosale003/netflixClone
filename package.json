@@ -12,6 +12,7 @@
   "dependencies": {
     "@mux/mux-player": "^3.4.0",
     "@mux/mux-player-react": "^3.4.0",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/vite": "^4.1.4",
     "@videojs/http-streaming": "^3.17.0",
     "framer-motion": "^12.10.1",

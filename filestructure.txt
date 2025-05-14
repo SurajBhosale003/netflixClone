@@ -4,15 +4,15 @@
 |-- index.html
 |-- package-lock.json
 |-- package.json
-|-- public
-    |-- vite.svg
 |-- src
     |-- App.css
     |-- App.tsx
-    |-- assets
     |-- components
         |-- sections
+            |-- CalendarComp.tsx
+            |-- Classification.tsx
             |-- List.tsx
+            |-- NewsMareqeeCards.tsx
             |-- Slider.tsx
         |-- utility
             |-- CustomVideoPlayer.tsx
@@ -22,6 +22,9 @@
             |-- NewsMareqee.tsx
     |-- content
         |-- AdsContent.ts
+        |-- ClassifiedData.tsx
+        |-- EventData.ts
+        |-- NewsCardContent.ts
         |-- NewsContent.ts
         |-- VideoOBJ.ts
     |-- index.css

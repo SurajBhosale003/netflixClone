@@ -13,7 +13,7 @@ interface NewsTickerProps {
 const NewsTicker: React.FC<NewsTickerProps> = ({ newsItems }) => {
   return (
     <div
-      className="w-full py-2 px-4 flex items-center h-12"
+    className="w-full py-2 px-4 flex items-center h-[48px] min-h-[48px]"
       style={{
         background: "linear-gradient(to right, #e50914, #b81d24)",
         color: "white",
@@ -23,7 +23,9 @@ const NewsTicker: React.FC<NewsTickerProps> = ({ newsItems }) => {
       <img
         src="https://storage.googleapis.com/1000gns/1001/1001website/Images/newsBreak.png"
         alt="Breaking News"
-        className="h-[11vh] w-auto mr-4 flex-shrink-0"
+        width="88"
+        height="90"
+        className="w-[88px] h-[90px] mr-4 flex-shrink-0"
       />
 
       {/* Marquee with news items */}

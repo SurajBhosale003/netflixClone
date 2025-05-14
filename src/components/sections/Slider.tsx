@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { videos } from "../../content/VideoOBJ";
 import NewsTicker from "../utility/NewsMareqee";
 import { newsItems } from "../../content/NewsContent"
+import NewsMareqeeCards from "./NewsMareqeeCards";
 
 function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,7 +60,7 @@ function Slider() {
   return (
     <>
     <div
-      className="relative w-full h-[95vh] overflow-hidden group"
+      className="relative w-full h-[95vh] aspect-video overflow-hidden group"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -74,6 +75,8 @@ function Slider() {
         {hovered || isAd ? (
           <video
             key={currentVideo.id}
+            width="1280"
+            height="720"
             src={getVideoQuality(optimizeCloudinaryVideo(currentVideo.video))}
             autoPlay
             muted
@@ -87,6 +90,8 @@ function Slider() {
           <img
             src={currentVideo.thumbnail}
             alt={currentVideo.title}
+            width="1280"
+            height="720"
             className="w-full h-full object-cover"
             loading="lazy"
             onLoad={() => setLoading(false)}
@@ -98,7 +103,7 @@ function Slider() {
       </div>
 
       {/* Content */}
-      <div className="absolute bottom-12 left-12 z-10 max-w-2xl text-white flex flex-col gap-6">
+      {/* <div className="absolute bottom-12 left-12 z-10 max-w-2xl text-white flex flex-col gap-6">
         <h1 className="text-5xl font-bold drop-shadow-lg">{currentVideo.title}</h1>
         <p className="text-lg text-gray-300">{currentVideo.description}</p>
 
@@ -131,7 +136,7 @@ function Slider() {
             </button>
           </div>
         )}
-      </div>
+      </div> */}
 
       {/* Navigation Arrows */}
       {!isAd && (
@@ -150,6 +155,7 @@ function Slider() {
           </button>
         </>
       )}
+      <NewsMareqeeCards/>
     </div>
        <NewsTicker newsItems={newsItems} />
 </>
